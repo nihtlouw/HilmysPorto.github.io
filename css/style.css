@@ -9682,3 +9682,29 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+    .subheading {
+      font-size: 2rem; // Size of the text
+      font-weight: 600; // Make it bold
+      color: $primary; // Use your primary color
+      text-transform: uppercase; // Transform text to uppercase
+      position: relative; // Enable positioning for pseudo-elements
+      margin: 20px 0; // Add some spacing
+  
+      &::before {
+          content: ""; // Create an underline effect
+          position: absolute;
+          left: 0;
+          bottom: -5px; // Position it slightly below the text
+          width: 50%; // Length of the underline
+          height: 4px; // Thickness of the underline
+          background-color: $secondary; // Use your secondary color
+          transform: scaleX(0); // Start with 0 width for animation
+          transition: transform 0.3s ease; // Smooth transition for the underline
+      }
+  
+      &:hover::before {
+          transform: scaleX(1); // Animate the underline on hover
+      }
+  }
+  
